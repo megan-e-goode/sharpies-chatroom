@@ -27,3 +27,12 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     });
     event.preventDefault();
 });
+
+document.getElementById("joinButton").addEventListener("click", function (event) {
+    var groupName = "Mafia";
+
+    connection.invoke("AddUserToMafia", groupName).catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
